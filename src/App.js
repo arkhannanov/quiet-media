@@ -1,72 +1,63 @@
 import React, {Component} from 'react';
 import './App.scss';
-import Navbar from './components/Navbar/Navbar';
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
-
-import LoginPage from "./components/Login/Login";
+import {BrowserRouter, Route, Router, withRouter} from "react-router-dom";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import store from "./redux/redux-store";
-import HeaderContainer from "./components/Header/HeaderContainer";
 import './App.scss';
-import ProfileContainer from "./components/Profile/ProfileContainer";
-import NewsContainer from "./components/News/NewsContainer";
-
+import Parameters from "./components/Parameters/Parameters";
+import Preview from "./components/Preview/Preview";
+import history from './history'
 
 class App extends Component {
 
-  componentDidMount() {
-    if(this.props.isAuth === false) {
+    // componentDidMount() {
+    //     history.push('/');
+    // }
 
-      this.props.history.push("/login");
+    render() {
+
+        return (
+            <div className='app'>
+                <div className='app__content'>
+                    <div className='app__content-left-side'>
+                        <Parameters/>
+                    </div>
+                    <div className='app__content-right-side'>
+                        <Route path={`/preview`}
+                               render={() => {
+                                   return (<Preview/>)
+                               }}/>
+
+                    </div>
+                </div>
+            </div>
+        )
     }
-  }
-
-  render() {
-
-    return (
-      <div className='app'>
-        <HeaderContainer/>
-        <div className='app__content'>
-          <Navbar/>
-          <div className='app__content-right-side'>
-            <Route path='/profile'
-                   render={() => <ProfileContainer/>}/>
-
-            <Route path='/news'
-                   render={() => <NewsContainer/>}/>
-
-            <Route path='/login'
-                   render={() => <LoginPage/>}/>
-          </div>
-        </div>
-      </div>
-    )
-  }
 };
 
 
 let mapStateToProps = (state) => {
-  return ({
-    isAuth: state.auth.isAuth
-  })
+    return ({})
 }
 
 
 let AppContainer = compose(
-  connect(mapStateToProps, {}),
-  withRouter
+    connect(mapStateToProps, {}),
+    withRouter
 )(App);
 
 
-const TestMO = (props) => {
-  return <BrowserRouter>
-    <Provider store={store}>
-      <AppContainer/>
-    </Provider>
-  </BrowserRouter>
+const QuietMedia = (props) => {
+    return <BrowserRouter>
+        <Provider store={store}>
+            <Router history={history}>
+                <AppContainer/>
+            </Router>
+        </Provider>
+    </BrowserRouter>
 }
 
-export default TestMO;
+export default QuietMedia;
 
 

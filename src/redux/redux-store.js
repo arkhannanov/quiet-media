@@ -1,14 +1,10 @@
 import {applyMiddleware, combineReducers, compose, createStore} from "redux";
-import profileReducer from "./profile-reducer";
-import authReducer from "./auth-reducer";
+import previewReducer from "./preview-reducer";
 import thunkMiddleware from "redux-thunk";
 import { reducer as formReducer } from 'redux-form';
-import newsReducer from "./news-reducer";
 
 let reducers = combineReducers({
-  profilePage: profileReducer,
-  newsPage: newsReducer,
-  auth: authReducer,
+  preview: previewReducer,
   form: formReducer,
 });
 
