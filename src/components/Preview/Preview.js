@@ -11,10 +11,17 @@ class Preview extends React.Component {
     }
 
     componentDidMount() {
-        window.onorientationchange = () => {
-            this.setState({orientation: window.orientation});
-        };
-        alert(window.orientation);
+        window.onresize = function (event) {
+            applyOrientation();
+        }
+
+        let applyOrientation = () => {
+            if (window.innerHeight > window.innerWidth) {
+                this.setState({orientation: 90});
+            } else {
+                this.setState({orientation: 0})
+            }
+        }
     }
 
     render() {

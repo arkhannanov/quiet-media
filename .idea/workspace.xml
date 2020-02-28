@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d02cac3-ca31-4921-9da8-963fffef2bf8" name="Default Changelist" comment="" />
+    <list default="true" id="3d02cac3-ca31-4921-9da8-963fffef2bf8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Preview/Preview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preview/Preview.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +73,7 @@
       <workItem from="1568266687749" duration="35979000" />
       <workItem from="1582818146871" duration="4513000" />
       <workItem from="1582879847285" duration="8323000" />
-      <workItem from="1582888466945" duration="894000" />
+      <workItem from="1582888466945" duration="2427000" />
     </task>
     <task id="LOCAL-00001" summary="Heroku deploy">
       <created>1568320600076</created>
