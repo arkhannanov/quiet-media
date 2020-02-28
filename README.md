@@ -1,3 +1,3 @@
-Доступно по адресу: https://quiet-lake-30927.herokuapp.com
-
-(email = max@test.com; password = 12345)
+Склонировть git clone
+Установить все npm модули npm i
+Запустить npm start
